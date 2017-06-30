@@ -37,7 +37,7 @@ const cleanStacktrace = (stacktrace) => stacktrace
     const [, filepath] = pathMatch;
     // rewrite filepaths to be relative to CWD
     if (filepath.indexOf(CWD) !== -1) {
-      // highline filepaths directly in CWD
+      // highlight filepaths directly in CWD
       newLine = newLine
         .replace(filepath, `./${chalk.magenta(path.relative(CWD, filepath))}`)
         .replace(/(at )([^ ]+)/, `$1${chalk.blue('$2')}`)
