@@ -17,7 +17,7 @@ const LEVEL_COLORS = {
   fatal: (msg) => chalk.bgRed.white.bold(msg),
 };
 
-const METADATA = ['level', 'msg'];
+const METADATA = ['level', 'msg', 'time'];
 
 // private
 
