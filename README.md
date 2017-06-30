@@ -40,3 +40,7 @@ log.fatal('catastrophic failure');
 ```
 
 <img src="https://raw.githubusercontent.com/Moeriki/georgeous/master/georgeous.png" />
+
+*   [Hyper](https://hyper.is)
+*   [Hyper Snazzy](https://github.com/sindresorhus/hyper-snazzy)
+*   [Chalk](https://github.com/chalk/chalk)
