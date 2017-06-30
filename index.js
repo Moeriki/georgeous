@@ -56,14 +56,26 @@ const cleanStacktrace = (stacktrace) => stacktrace
 
 // exports
 
-function log(msg, ...metadatas) {
+function log(msg, ...metadatum) {
   const logData = {};
   if (typeof msg === 'string') {
     logData.msg = msg;
-    Object.assign(logData, ...metadatas);
   } else if (typeof msg === 'object') {
     Object.assign(logData, msg);
   }
+
+  metadatum.forEach((metadata) => {
+    if (metadata instanceof Error) {
+      Object.assign(logData, {
+        err: {
+          message: metadata.message,
+          stack: metadata.stack,
+        },
+      });
+    } else {
+      Object.assign(logData, metadata);
+    }
+  });
 
   const colorizeWithLevel = LEVEL_COLORS[logData.level] || chalk.white;
 
