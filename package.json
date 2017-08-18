@@ -2,8 +2,13 @@
   "name": "georgeous",
   "version": "0.1.1",
   "description": "Write georgeous log lines.",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "logs",
+    "logging",
+    "metadata",
+    "bunyan"
+  ],
+  "author": "Dieter Luypaert <dieterluypaert@gmail.com>",
   "license": "GPL-3.0+",
   "main": "index.js",
   "engines": {
