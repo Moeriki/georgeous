@@ -4,7 +4,7 @@
   "description": "Write georgeous log lines.",
   "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "GPL-3.0+",
   "main": "index.js",
   "engines": {
     "node": ">=6"
