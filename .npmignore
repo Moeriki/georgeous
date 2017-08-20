@@ -2,4 +2,5 @@
 .eslintrc.js
 .gitignore
 .npmignore
+examples
 node_modules/
