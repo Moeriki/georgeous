@@ -22,7 +22,14 @@ process.stdin
   .pipe(split())
   .on('data', (data) => {
     if (data) {
-      log(JSON.parse(data));
+      try {
+        log(JSON.parse(data));
+      } catch (err) {
+        if (err.name !== 'SyntaxError') {
+          throw err;
+        }
+        process.stdout.write(`${data}\n`);
+      }
     }
   })
 ;
