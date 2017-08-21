@@ -1,5 +1,5 @@
 <p align="center">
-  <h3 align="center">georgeous</h3>
+  <h3 align="center">georgeous 🐒</h3>
   <p align="center">Make your console logs georgeous.<p>
   <p align="center">
     <a href="https://www.npmjs.com/package/georgeous">
@@ -41,6 +41,24 @@ log.fatal('catastrophic failure');
 
 <img src="https://raw.githubusercontent.com/Moeriki/georgeous/master/georgeous.png" />
 
-*   [Hyper](https://hyper.is)
-*   [Hyper Snazzy](https://github.com/sindresorhus/hyper-snazzy)
-*   [Chalk](https://github.com/chalk/chalk)
+* [Hyper](https://hyper.is)
+* [Hyper Snazzy](https://github.com/sindresorhus/hyper-snazzy)
+* [Chalk](https://github.com/chalk/chalk)
+
+### Use with Bunyan
+
+**install**
+
+```
+npm install --save-dev georgeous
+```
+
+**package.json** *in your app*
+
+```js
+{
+  "start": "node index.js | georgeous --preset bunyan"
+}
+```
+
+Setup Bunyan are you normally would.
