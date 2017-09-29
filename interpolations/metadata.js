@@ -63,6 +63,8 @@ const format = (log, { cwd, exclude }) => traverse(log)
   .map(({ key, value }) => {
     if (key === 'err.stack') {
       value = cleanStacktrace(value, { cwd });
+    } else if (typeof value === 'object') {
+      value = JSON.stringify(value);
     }
     return `${chalk.gray(`${key}=`)}${value}`;
   })
