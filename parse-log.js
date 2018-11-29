@@ -6,7 +6,7 @@ const merge = require('lodash.merge');
 
 function parseLog(args, options) {
   const log = {};
-  args.forEach((arg) => {
+  args.forEach(arg => {
     if (typeof arg === 'string') {
       log[options.message.key] = arg;
     } else if (arg instanceof Error) {

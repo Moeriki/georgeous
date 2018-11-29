@@ -27,7 +27,7 @@ module.exports = {
     {
       id: 60,
       name: 'fatal',
-      modifier: (msg) => chalk.bgRed.white.bold(msg),
+      modifier: msg => chalk.bgRed.white.bold(msg),
     },
   ],
   metadata: {

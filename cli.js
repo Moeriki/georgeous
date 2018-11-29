@@ -11,25 +11,20 @@ const { argv } = yargs
   .option('preset', {
     alias: 'p',
   })
-  .help()
-;
-
+  .help();
 const log = georgeous({
   preset: argv.preset,
 });
 
-process.stdin
-  .pipe(split())
-  .on('data', (data) => {
-    if (data) {
-      try {
-        log(JSON.parse(data));
-      } catch (err) {
-        if (err.name !== 'SyntaxError') {
-          throw err;
-        }
-        process.stdout.write(`${data}\n`);
+process.stdin.pipe(split()).on('data', data => {
+  if (data) {
+    try {
+      log(JSON.parse(data));
+    } catch (err) {
+      if (err.name !== 'SyntaxError') {
+        throw err;
       }
+      process.stdout.write(`${data}\n`);
     }
-  })
-;
+  }
+});

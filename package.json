@@ -19,7 +19,7 @@
     "georgeous": "cli.js"
   },
   "scripts": {
-    "lint": "eslint index.js",
+    "lint": "eslint .",
     "test": "echo \"No tests.\""
   },
   "dependencies": {
@@ -32,9 +32,23 @@
     "yargs": "^9.0.1"
   },
   "devDependencies": {
-    "eslint": "^4.7.2",
-    "eslint-config-muriki": "^9.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.2.0"
+    "eslint": "~5.9.0",
+    "eslint-config-airbnb-base": "~13.1.0",
+    "eslint-config-prettier": "~3.3.0",
+    "eslint-plugin-import": "~2.14.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "parserOptions": {
+      "sourceType": "script"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
   }
 }

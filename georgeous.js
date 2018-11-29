@@ -12,10 +12,11 @@ function georgeous(arg0) {
 
   // exposed
 
+  // eslint-disable-next-line consistent-return
   function write(...args) {
     const log = parseLog(args, options);
     const data = { src: log };
-    Object.keys(interpolations).forEach((key) => {
+    Object.keys(interpolations).forEach(key => {
       const { format } = interpolations[key];
       Object.defineProperty(data, key, {
         get() {

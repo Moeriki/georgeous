@@ -17,14 +17,17 @@ const INTERPOLATE = /{([\s\S]+?)}/g;
 // exports
 
 function parseOptions(arg0 = {}) {
-  const options = merge({ write: true }, presets[arg0.preset || DEFAULT_PRESET], arg0);
-
-  options.template = template(
-    options.template || DEFAULT_TEMPLATE,
-    { interpolate: INTERPOLATE }
+  const options = merge(
+    { write: true },
+    presets[arg0.preset || DEFAULT_PRESET],
+    arg0
   );
 
-  Object.keys(interpolations).forEach((key) => {
+  options.template = template(options.template || DEFAULT_TEMPLATE, {
+    interpolate: INTERPOLATE,
+  });
+
+  Object.keys(interpolations).forEach(key => {
     const { defaults } = interpolations[key];
     options[key] = defaults ? defaults(options[key] || {}, options) : {};
   });
