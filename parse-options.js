@@ -16,7 +16,10 @@ const INTERPOLATE = /{([\s\S]+?)}/g;
 
 // exports
 
-function parseOptions(arg0 = {}) {
+function parseOptions(arg0) {
+  if (arg0.preset && !presets[arg0.preset]) {
+    throw new Error(`Preset not found: ${arg0.preset}`);
+  }
   const options = merge(
     { write: true },
     presets[arg0.preset || DEFAULT_PRESET],
